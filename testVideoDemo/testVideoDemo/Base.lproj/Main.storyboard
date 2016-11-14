@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GiC-68-T7y">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="0eO-eT-OkK">
+            <objects>
+                <viewController id="GiC-68-T7y" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CIE-vQ-gtp"/>
+                        <viewControllerLayoutGuide type="bottom" id="rHo-u4-vTX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sbY-y6-8jo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dY9-N6-Szc" userLabel="remoteView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ELm-hn-fq6">
+                                        <rect key="frame" x="178" y="324" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="connect..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT1-ze-bbp">
+                                        <rect key="frame" x="149" y="343" width="77" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.68235294120000001" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ELm-hn-fq6" firstAttribute="centerY" secondItem="dY9-N6-Szc" secondAttribute="centerY" id="6Ox-xw-cZx"/>
+                                    <constraint firstItem="fT1-ze-bbp" firstAttribute="centerX" secondItem="dY9-N6-Szc" secondAttribute="centerX" id="9Nd-zh-Sc6"/>
+                                    <constraint firstItem="fT1-ze-bbp" firstAttribute="centerY" secondItem="dY9-N6-Szc" secondAttribute="centerY" constant="20" id="QBY-rT-dfd"/>
+                                    <constraint firstItem="ELm-hn-fq6" firstAttribute="centerX" secondItem="dY9-N6-Szc" secondAttribute="centerX" id="SL6-5S-huQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-w0-x5c" userLabel="locaView">
+                                <rect key="frame" x="243" y="10" width="112" height="200"/>
+                                <color key="backgroundColor" red="0.3058823645" green="0.71372550729999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JP8-w0-x5c" secondAttribute="height" multiplier="9:16" id="Rds-Jd-v3j"/>
+                                    <constraint firstAttribute="height" constant="200" id="TF9-HG-Gis"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gph-pv-Vb3" appends="YES" id="jQ6-Yh-Cdu"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BM-Dl-e6D">
+                                <rect key="frame" x="157" y="597" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="startCallButton"/>
+                                <connections>
+                                    <action selector="showRoomInput:" destination="GiC-68-T7y" eventType="touchUpInside" id="vnn-eH-KjQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prx-VH-lK7">
+                                <rect key="frame" x="157" y="597" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="endCallButton"/>
+                                <connections>
+                                    <action selector="leave:" destination="GiC-68-T7y" eventType="touchUpInside" id="ZYc-I4-F2S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adx-2x-Nkw">
+                                <rect key="frame" x="12" y="12" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Fcv-O2-WSd"/>
+                                    <constraint firstAttribute="height" constant="30" id="Owf-dT-5bt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="发送内容">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="GiC-68-T7y" eventType="touchUpInside" id="p1q-wj-NDZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rHo-u4-vTX" firstAttribute="top" secondItem="dY9-N6-Szc" secondAttribute="bottom" id="8If-dA-3qw"/>
+                            <constraint firstAttribute="trailing" secondItem="dY9-N6-Szc" secondAttribute="trailing" id="ABW-rW-KVK"/>
+                            <constraint firstItem="prx-VH-lK7" firstAttribute="centerX" secondItem="sbY-y6-8jo" secondAttribute="centerX" id="FFU-Ss-YyI"/>
+                            <constraint firstItem="8BM-Dl-e6D" firstAttribute="centerX" secondItem="sbY-y6-8jo" secondAttribute="centerX" id="Ric-LR-ZQU"/>
+                            <constraint firstItem="prx-VH-lK7" firstAttribute="centerX" secondItem="sbY-y6-8jo" secondAttribute="centerX" id="UxM-cs-dcA"/>
+                            <constraint firstItem="dY9-N6-Szc" firstAttribute="top" secondItem="CIE-vQ-gtp" secondAttribute="bottom" id="VpU-cb-AjD"/>
+                            <constraint firstAttribute="trailing" secondItem="JP8-w0-x5c" secondAttribute="trailing" constant="20" id="h1V-FF-Esx"/>
+                            <constraint firstItem="Adx-2x-Nkw" firstAttribute="top" secondItem="CIE-vQ-gtp" secondAttribute="bottom" constant="12" id="h72-t3-Lwu"/>
+                            <constraint firstItem="rHo-u4-vTX" firstAttribute="top" secondItem="prx-VH-lK7" secondAttribute="bottom" constant="10" id="jxI-iD-rSM"/>
+                            <constraint firstItem="Adx-2x-Nkw" firstAttribute="leading" secondItem="sbY-y6-8jo" secondAttribute="leading" constant="12" id="nHe-oE-nOM"/>
+                            <constraint firstItem="dY9-N6-Szc" firstAttribute="leading" secondItem="sbY-y6-8jo" secondAttribute="leading" id="sI7-yi-EMK"/>
+                            <constraint firstItem="rHo-u4-vTX" firstAttribute="top" secondItem="prx-VH-lK7" secondAttribute="bottom" constant="10" id="xXD-4t-P6H"/>
+                            <constraint firstItem="JP8-w0-x5c" firstAttribute="top" secondItem="CIE-vQ-gtp" secondAttribute="bottom" constant="10" id="zEX-jb-bdR"/>
+                            <constraint firstAttribute="bottom" secondItem="8BM-Dl-e6D" secondAttribute="bottom" constant="10" id="zoy-J2-yGx"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="activityView" destination="ELm-hn-fq6" id="e5Z-AN-nT8"/>
+                        <outlet property="connectBtn" destination="8BM-Dl-e6D" id="lzA-DQ-Ka2"/>
+                        <outlet property="connectTipLabel" destination="fT1-ze-bbp" id="PpP-PN-Yi1"/>
+                        <outlet property="leaveBtn" destination="prx-VH-lK7" id="AE4-Za-7v9"/>
+                        <outlet property="localView" destination="JP8-w0-x5c" id="Cs4-VN-b55"/>
+                        <outlet property="remoteView" destination="dY9-N6-Szc" id="WLM-ij-wvd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F70-1X-p6n" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gph-pv-Vb3">
+                    <connections>
+                        <action selector="switchCamera:" destination="GiC-68-T7y" id="FcY-LH-wN0"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="endCallButton" width="60" height="60"/>
+        <image name="startCallButton" width="60" height="60"/>
+    </resources>
+</document>
