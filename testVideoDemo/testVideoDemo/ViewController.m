@@ -74,7 +74,7 @@
 
 - (IBAction)leave:(id)sender
 {
-    [self.planet leaveRoomId:self.roomId];
+    [self.planet leaveRoomId:self.roomId payload:@""];
     self.leaveBtn.hidden = YES;
     self.connectBtn.hidden = NO;
 }
@@ -86,6 +86,10 @@
     self.connectTipLabel.text = @"";
     __block ViewController * weakSelf = self;
     [self.planet connectRoomId:self.roomId
+                       payload:@"haha test"
+                       session:^(NSString *session) {
+                           NSLog(@"session:%@",session);
+                       }
                          state:^(TKVideoConnectState state, NSError *error) {
                              BOOL needHiddenBtn;
                              BOOL needHiddenLoadingView;
@@ -103,7 +107,7 @@
                              else if(state == TKVideoPlanetConnecting){
                                  needHiddenBtn = YES;
                                  needHiddenLoadingView = NO;
-                                 self.connectTipLabel.text = [NSString stringWithFormat:@"connect room:%@",self.roomId];
+                                 weakSelf.connectTipLabel.text = [NSString stringWithFormat:@"connect room:%@",self.roomId];
                              }
                              weakSelf.activityView.hidden = needHiddenLoadingView;
                              weakSelf.connectTipLabel.hidden = needHiddenLoadingView;
@@ -190,6 +194,7 @@
 - (IBAction)switchCamera:(id)sender
 {
     [self.planet.cameraPreviewController switchCameraIsFront:!self.planet.cameraPreviewController.isFront];
+    
 }
 
 @end

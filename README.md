@@ -5,8 +5,10 @@ planet-sdk-objc iOS SDK 为第三方应用提供了简单易用的视频通话�
 #快速集成
 planet-sdk-objc支持使用Cocoapods集成，请在Podfile中添加以下语句：
 ```ruby
-pod 'TKVideoPlanet','~> 0.0.2'
+pod 'TKVideoPlanet','~> 0.0.3'
 ```
+#sdk使用的环境
+ios8.0 以上的系统，包含8.0
 #demo使用说明
 测试需要两台设备分别输入相同的房间号，就可以视频通话
 
