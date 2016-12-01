@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TKVideoPlanet"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A short description of TKVideoPlanet."
 
   # This description is used to generate tags and improve search results.
@@ -121,7 +121,7 @@ s.source       = { :git => "https://github.com/BuddyTechnology/planet-sdk-objc.g
   #
 
   # s.framework  = "SomeFramework"
-  s.frameworks = 'GLKit', 'AudioToolbox', 'CFNetwork', 'VideoToolbox','Security', "MobileCoreServices","SystemConfiguration"
+  s.frameworks = 'GLKit', 'AudioToolbox', 'CFNetwork', 'VideoToolbox','Security', "MobileCoreServices","SystemConfiguration","CoreLocation"
 
   s.libraries   = "stdc++","icucore"
 
